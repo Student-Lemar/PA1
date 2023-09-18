@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+#include <fstream>
+
+#include <string>
+
 using namespace std;
 
 struct node
@@ -38,6 +42,32 @@ public:
             tail = tail->next;
         }
     }
+    game()
+    {
+        int Displaychoice;
+        vector<string> choices = {"1. Game Rules", "2. Play Game", "3. Load Previous Game", "4. Add Command", "5. Remove Command", "6. Exit"};
+        cout << "Please select a number option below:" << end1;
+
+        for (int i = 0; i < choices.size(); i++){
+            cout << choices[i] << end1;
+        }
+        cin >> (Displaychoice);
+
+        if (Displaychoice == 1){
+            cout << "When the game starts it will display the description for the command and you the player\n will have to type the answer/command and if you get it correct you will recieve a point \nif you get it wrong you will lose a point" << end1;
+            return game();
+        }
+        else if(Displaychoice == 2){
+        }
+        else if(Displaychoice == 3){
+        }
+        else if(Displaychoice == 4){
+        }
+        else if(Displaychoice == 5){
+        }
+        else if(Displaychoice == 6){
+        }
+    }    
 };
 
 int main()
