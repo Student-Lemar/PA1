@@ -46,6 +46,7 @@ public:
     {
         FILE command = fopen("command.csv", "r");
         
+        
         int Displaychoice;
         vector<string> choices = {"1. Game Rules", "2. Play Game", "3. Load Previous Game", "4. Add Command", "5. Remove Command", "6. Exit"};
         cout << "Please select a number option below:" << end1;
@@ -60,9 +61,9 @@ public:
             return game();
         }
         else if(Displaychoice == 2){
-            int x = 0;
-            while (x==0){
+            while (tmp!=NULL){
                 
+                tmp=tmp->next;
             }
         }
         else if(Displaychoice == 3){
