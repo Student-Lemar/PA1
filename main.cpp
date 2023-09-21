@@ -8,6 +8,8 @@
 
 #include <fstream>
 
+#include <ifstream>
+
 #include <string>
 
 using namespace std;
@@ -48,11 +50,15 @@ public:
     }
     game()
     {
-        string command;
-        string dis;
-        FILE file = fopen("command.csv", "r");
-        
-        
+        vector<string> info;
+        ifstream file("command.csv");
+
+        while (!file.eof()){
+            int x = 1;
+            add_node(x);
+            tmp -> info = getline(file, info, ',');
+            x += 1;
+        }
         
         int Displaychoice;
         vector<string> choices = {"1. Game Rules", "2. Play Game", "3. Load Previous Game", "4. Add Command", "5. Remove Command", "6. Exit"};
@@ -86,8 +92,6 @@ public:
 
 int main()
 {
-    linked_list a;
-    a.add_node(1);
-    a.add_node(2);
-    return 0;
+    linked_list x;
+    x.game();
 }
