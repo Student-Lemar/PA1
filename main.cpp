@@ -8,9 +8,9 @@
 
 #include <fstream>
 
-#include <ifstream>
-
 #include <string>
+
+#include <vector>
 
 using namespace std;
 
@@ -50,15 +50,15 @@ public:
     }
     game()
     {
-        vector<string> info;
+        std::vector<string> info;
         ifstream file("command.csv");
-
+        int x = 1;
         while (!file.eof()){
-            int x = 1;
             add_node(x);
             tmp -> info = getline(file, info, ',');
             x += 1;
         }
+        file.close();
         
         int Displaychoice;
         vector<string> choices = {"1. Game Rules", "2. Play Game", "3. Load Previous Game", "4. Add Command", "5. Remove Command", "6. Exit"};
@@ -80,8 +80,19 @@ public:
             }
         }
         else if(Displaychoice == 3){
+            
         }
         else if(Displaychoice == 4){
+            string command;
+            string discription;
+            cout << "add the command" << endl;
+            cin >> (command);
+            cout << "add the discription" << endl;
+            cin << (discription);
+            x += 1;
+            add_node(x);
+            tmp -> info.push_back(command);
+            tmp -> info.push_back(discription);
         }
         else if(Displaychoice == 5){
         }
